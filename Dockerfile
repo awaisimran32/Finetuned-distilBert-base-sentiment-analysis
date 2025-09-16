@@ -1,22 +1,31 @@
+# Use slim Python image
 FROM python:3.10-slim
 
-# system deps (if needed)
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential gcc git curl && \
     rm -rf /var/lib/apt/lists/*
 
+# Set working directory
 WORKDIR /app
 
-# copy api requirements and install
+# Copy requirements from the api folder
 COPY api/requirements.txt /app/requirements.txt
-RUN pip install --upgrade pip
-RUN pip install -r /app/requirements.txt
 
-# copy project
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r /app/requirements.txt
+
+# Copy the ML model (pre-downloaded)
+COPY model/ /app/model/
+
+# Copy FastAPI app
+COPY api/ /app/api/
+
+# Copy other project files if needed
 COPY . /app
 
-# port
-EXPOSE 8000
+# Expose port for Hugging Face Spaces
+EXPOSE 7860
 
-# Use env var to set host/port in uvicorn if you want later
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+# Run FastAPI with uvicorn
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "1"]
