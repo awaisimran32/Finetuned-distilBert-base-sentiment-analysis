@@ -3,12 +3,12 @@ import requests
 import json
 from typing import List
 
-st.set_page_config(page_title="XLnet Sentiment Analyzer Demo", layout="centered")
+st.set_page_config(page_title="DisitlBert Sentiment Analyzer Demo", layout="centered")
 
 API_URL = st.secrets.get("api_url", "http://localhost:8000")
 
-st.title("XLnet Sentiment Analysis Demo")
-st.markdown("Type a sentence and get sentiment prediction from your fine-tuned XLnet model.")
+st.title("DistilBert Sentiment Analysis Demo")
+st.markdown("Type a sentence and get sentiment prediction from your fine-tuned Distil Bert model.")
 
 text = st.text_area("Enter text", value="I love this product. It works great!")
 

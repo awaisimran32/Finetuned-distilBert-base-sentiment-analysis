@@ -8,7 +8,7 @@ from src.utils import format_prediction, format_batch
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("api")
 
-app = FastAPI(title="XLnet Sentiment Analysis API", version="1.0")
+app = FastAPI(title="Distilbert Sentiment Analysis API", version="1.0")
 
 class TextItem(BaseModel):
     text: str
@@ -38,4 +38,4 @@ def predict_batch_endpoint(batch: BatchText):
 # Quick root
 @app.get("/")
 def root():
-    return {"message": "Xlnet Sentiment Analysis API - see /docs for interactive UI"}
+    return {"message": "DistilBert Sentiment Analysis API - see /docs for interactive UI"}
