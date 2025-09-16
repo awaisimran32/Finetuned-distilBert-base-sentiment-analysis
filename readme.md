@@ -1,9 +1,9 @@
-# XLnet Sentiment Analysis
+# DistilBert Sentiment Analysis
 
-**End-to-end demo** of a fine-tuned Xlnet model for sentiment analysis — packaged as an API and demo UI.
+**End-to-end demo** of a fine-tuned DistilBert model for sentiment analysis — packaged as an API and demo UI.
 
 ## Features
-- Fine-tuned Xlnet inference (local `model/` folder)
+- Fine-tuned DistilBert inference (local `model/` folder)
 - FastAPI endpoints:
   - `GET /health`
   - `POST /predict` (single text)
@@ -23,3 +23,4 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r api/requirements.txt
 pip install streamlit requests
+
