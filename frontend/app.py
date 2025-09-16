@@ -30,7 +30,7 @@ if st.button("Analyze"):
 st.markdown("---")
 st.markdown("For batch demo, provide multiple lines and press **Analyze Batch**")
 
-batch_text = st.text_area("Batch texts (one per line)", value="I love it!\nIt was very scary.")
+batch_text = st.text_area("Batch texts (one per line)", value="I loved it!\nIt was very scary.")
 if st.button("Analyze Batch"):
     texts = [t.strip() for t in batch_text.splitlines() if t.strip()]
     if not texts:
@@ -45,3 +45,4 @@ if st.button("Analyze Batch"):
                 st.json(o)
         except Exception as e:
             st.error(f"Request failed: {e}")
+
