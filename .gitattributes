@@ -2,3 +2,4 @@
 * text=auto
 models/* filter=lfs diff=lfs merge=lfs -text
 model/* filter=lfs diff=lfs merge=lfs -text
+models/*.pt filter=lfs diff=lfs merge=lfs -text
