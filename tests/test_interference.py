@@ -8,9 +8,10 @@ def test_predict_single():
     assert 0.0 <= conf <= 1.0
 
 def test_predict_batch():
-    texts = ["I love it", "This is awful"]
+    texts = ["I loved it", "This is awful"]
     results = predict_batch(texts)
     assert len(results) == 2
     for label, conf in results:
         assert isinstance(label, str)
         assert 0.0 <= conf <= 1.0
+
