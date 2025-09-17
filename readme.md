@@ -145,7 +145,7 @@ Covers:
 ## 7. Model & Data
 
 - Model: Fine‑tuned **DistilBERT** (lightweight BERT variant)  
-- Dataset: e.g. IMDB, SST‑2, or similar (mention which you used)  
+- Dataset: e.g. IMDB, SST‑2, or similar 
 - Preprocessing: Tokenization, truncation, handling class imbalance  
 - Metrics: Accuracy, F1, Precision/Recall  
 
@@ -181,3 +181,4 @@ Copyright (c) 2025 Awais Imran
 
 - Author: [Awais Imran](https://github.com/awaisimran32)  
 - Powered by Hugging Face, FastAPI, Streamlit, Docker, and open source contributors.  
+
